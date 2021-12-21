@@ -1,0 +1,61 @@
+#todo {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  background-color: white;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 5px;
+}
+
+input:hover {
+  border-color: #ffc107;
+}
+
+.add {
+  background-color: #ffc107;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.inputDiv button {
+  background-color: #ffc107;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.item_input {
+  width: 40%;
+}
+
+.edit {
+  background: none;
+  outline: none;
+  border: 1px solid rgb(141, 141, 141);
+  color: black;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: all 0.4s;
+  border-radius: 5px;
+}
+
+.edit:hover {
+  background-color: #ffc107;
+}
+
+.remove {
+  background: none;
+  outline: none;
+  border: 1px solid rgb(141, 141, 141);
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.remove:hover {
+  background-color: red;
+}

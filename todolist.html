@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="todolist.css" />
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <title>ToDoList</title>
+  </head>
+  <body>
+    <section id="todo">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-8">
+            <div class="inputDiv">
+              <input type="text" class="input mt-4 mb-4 border rounded-3" placeholder="Apa yang ingin kamu lakukan...?" />
+              <button class="add btn btn-outline-dark"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="container"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      /* 
+   this code will save the todo items even you refresh the page
+*/
+      const container = document.querySelector(".container");
+      var inputValue = document.querySelector(".input");
+      const add = document.querySelector(".add");
+      if (window.localStorage.getItem("todos") == undefined) {
+        var todos = [];
+        window.localStorage.setItem("todos", JSON.stringify(todos));
+      }
+      var todosEX = window.localStorage.getItem("todos");
+      var todos = JSON.parse(todosEX);
+      class item {
+        constructor(name) {
+          this.createItem(name);
+        }
+        createItem(name) {
+          var itemBox = document.createElement("div");
+          itemBox.classList.add("item");
+          var input = document.createElement("input");
+          input.type = "text";
+          input.disabled = true;
+          input.value = name;
+          input.classList.add("item_input");
+          var edit = document.createElement("button");
+          edit.classList.add("edit");
+          edit.innerHTML = "EDIT";
+          edit.addEventListener("click", () => this.edit(input, name));
+          var remove = document.createElement("button");
+          remove.classList.add("remove");
+          remove.innerHTML = "REMOVE";
+          remove.addEventListener("click", () => this.remove(itemBox, name));
+          container.appendChild(itemBox);
+          itemBox.appendChild(input);
+          itemBox.appendChild(edit);
+          itemBox.appendChild(remove);
+        }
+        edit(input, name) {
+          if (input.disabled == true) {
+            input.disabled = !input.disabled;
+          } else {
+            input.disabled = !input.disabled;
+            let indexof = todos.indexOf(name);
+            todos[indexof] = input.value;
+            window.localStorage.setItem("todos", JSON.stringify(todos));
+          }
+        }
+        remove(itemBox, name) {
+          itemBox.parentNode.removeChild(itemBox);
+          let index = todos.indexOf(name);
+          todos.splice(index, 1);
+          window.localStorage.setItem("todos", JSON.stringify(todos));
+        }
+      }
+      add.addEventListener("click", check);
+      window.addEventListener("keydown", (e) => {
+        if (e.which == 13) {
+          check();
+        }
+      });
+      function check() {
+        if (inputValue.value != "") {
+          new item(inputValue.value);
+          todos.push(inputValue.value);
+          window.localStorage.setItem("todos", JSON.stringify(todos));
+          inputValue.value = "";
+        }
+      }
+      for (var v = 0; v < todos.length; v++) {
+        new item(todos[v]);
+      }
+    </script>
+  </body>
+</html>
