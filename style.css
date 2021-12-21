@@ -1,0 +1,42 @@
+nav .container .collaps button {
+  background-color: #e6cb46;
+  border-style: border box;
+}
+
+.container .row .col-sm-8 a img {
+  width: 250px;
+  height: 250px;
+}
+
+.konten {
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.konten .fitur button {
+  width: 70%;
+  margin: 1rem;
+  margin-top: 2rem;
+}
+
+.konten .fitur {
+  width: 60%;
+  float: left;
+}
+
+.konten .web {
+  width: 40%;
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+.konten .web a img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.wives {
+  margin-top: 100px;
+}
