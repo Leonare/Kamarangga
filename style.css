@@ -11,25 +11,13 @@ nav .container .collaps button {
 .konten {
   position: relative;
   margin-bottom: 100px;
-  min-height: 600px;
+  min-height: 400px;
 }
 
 .konten .fitur button {
   width: 70%;
   margin: 1rem;
   margin-top: 2rem;
-}
-
-.konten .fitur {
-  width: 60%;
-  float: left;
-}
-
-.konten .web {
-  width: 40%;
-  position: absolute;
-  top: 30px;
-  right: 0;
 }
 
 .konten .web a img {
@@ -47,4 +35,12 @@ nav .container .collaps button {
   background-color: #ddd;
   margin-bottom: 2rem;
   padding: 0;
+}
+
+.konten .side {
+  width: 100%;
+}
+
+.side .masalah .btnmasalah {
+  width: 100%;
 }

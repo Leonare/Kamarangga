@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
     <title>Kamarangga</title>
   </head>
   <body id="home">
@@ -37,33 +38,6 @@
         </div>
       </div>
     </nav>
-    <script>
-      $(document).ready(function() {
-              if (Notification.permission !== "granted")
-              Notification.requestPermission();
-      });
-      
-      function notifikasi() {
-          if (!Notification) {
-              alert('Browsermu tidak mendukung Web Notification.'); 
-              return;
-          }
-          if (Notification.permission !== "granted")
-              Notification.requestPermission();
-          else {
-              var notifikasi = new Notification('Quotes of the day', {
-                  icon: 'freepik/KA-logo.jpg',
-                  body: "Gagal itu urusan nanti. Aku tau kamu hebat :) ",
-              });
-              notifikasi.onclick = function () {
-                  window.open("http://goo.gl/dIf4s1");      
-              };
-              setTimeout(function(){
-                  notifikasi.close();
-              }, 5000);
-          }
-      };
-  </script>
     <!-- Akhir Header -->
 
 
@@ -71,82 +45,144 @@
     <!-- Konten -->
     <section class="container konten">
       <div class="row fitur justify-content-center">
-        <div class="col-md-4 gambarweb">
+        <div class="col-md-3 gambarweb">
             <button class="btn btn-outline-dark p-4 justify-content-center" onclick="window.location.href='hhttps://mathsolver.microsoft.com/en'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calculator-fill" viewBox="0 0 16 16">
               <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5zm0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z"/>
             </svg></button>
         </div>
-        <div class="col-md-4 gambarweb">
+        <div class="col-md-3 gambarweb">
             <button class="btn btn-outline-dark p-4" onclick="window.location.href='todolist.html'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-plus" viewBox="0 0 16 16">
               <path d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z"/>
               <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
             </svg></button>
         </div>
-        <div class="col-md-4 gambarweb">
+        <div class="col-md-3 gambarweb">
             <button class="btn btn-outline-dark p-4" onclick="window.location.href='#'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
               <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
               <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
             </svg></button>
         </div>
-        <div class="col-md-4 gambarweb">
+        <div class="col-md-3 gambarweb">
             <button class="btn btn-outline-dark p-4" onclick="window.location.href='timer.html'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stopwatch" viewBox="0 0 16 16">
               <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"/>
               <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
             </svg></button>
         </div>
-        <div class="col-md-4 gambarweb">
+        <div class="col-md-3 gambarweb">
             <button class="btn btn-outline-dark p-4" onclick="window.location.href='#'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"/>
             </svg></button>
         </div>
-        <div class="col-md-4 gambarweb">
+        <div class="col-md-3 gambarweb">
             <button class="btn btn-outline-dark p-4" onclick="window.location.href='#'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
               <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
             </svg></button>
         </div>
       </div>
-      <div class="row web">
-        <div class="col"><h1 class="mb-3">Pengatur Jam Belajar</h1></div>
-        <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
-          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-          <label class="btn btn-outline-warning" for="btnradio1">Easy</label>
-        
-          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-          <label class="btn btn-outline-warning" for="btnradio2">Medium</label>
-        
-          <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-          <label class="btn btn-outline-warning" for="btnradio3">Hard</label>
-        </div>
-        <div id="myProgress">
-          <div id="myBar" class="progress-bar progress-bar-striped progress-bar-animated">
-            <div id="label"></div>
-          </div>
-        </div><br>
-        <button class="btn btn-warning" onclick="move()">Mulai Belajar</button> 
-        <p class="mt-3 text-center">*Tunggu 30 detik hingga progress bar muncul</p>
+    </section >
+    <!-- Akhir Konten -->
+
+    <!-- Pengatur Jam Belajar -->
+    <section class="container side">
+      <div class="row mt-3">
+        <div class="col justify-content-center"><h2 class="mb-3 text-center">Pengatur Jam Belajar</h2></div>
       </div>
 
-      
-    </section >
-    <script>
-      function move() {
-        var elem = document.getElementById("myBar");   
-        var width = 1;
-        var id = setInterval(frame, 30000);
-        function frame() {
-          if (width >= 100) {
-            clearInterval(id);
-          } else {
-            width++; 
-            elem.style.width = width + '%'; 
-            document.getElementById("label").innerHTML = width * 1  + '%';
-          }
-        }
-      }
-      </script>
-    <!-- Akhir Konten -->
+      <div class="row web text-center mb-3 justify-content-center">
+          <div class=" col-md-2 btnEasy ">
+            <button type="button" class="btn btn-outline-success "  onclick="document.getElementById('btnEasy').style.display= 'block'"> Easy</button>
+            <button class="btn btn-outline-success" onclick="document.getElementById('btnEasy').style.display= 'none'" >X</button>
+          </div>
+          <div class="col-md-2 btnMed">
+            <button type="button" class="btn btn-outline-warning"  onclick="document.getElementById('btnMed').style.display= 'block'"> Medium</button>
+            <button class="btn btn-outline-warning"  onclick="document.getElementById('btnMed').style.display= 'none'" >X</button>
+          </div>
+          <div class="col-md-2 btnHard">
+            <button type="button" class="btn btn-outline-danger"  onclick="document.getElementById('btnHard').style.display= 'block'"> Hard</button>
+            <button class="btn btn-outline-danger"  onclick="document.getElementById('btnHard').style.display= 'none'" >X</button>
+          </div>
+      </div>
+      <div class="row">
+        <div id="row myProgress" class="col">
+          <div id="myBar" class="progress-bar progress-bar-striped progress-bar-animated">
+              <div id="label"></div>
+      </div>
+            
+        </div>
+      </div>
+      <div class="row masalah text-center mt-3">
+        <div class="col-12 ">
+          <button class="btn btn-warning btnmasalah" id="btnEasy" style="display: none;" onclick="moveEasy()">Mulai Belajar</button> 
+          <button class="btn btn-warning btnmasalah" id="btnMed" style="display: none;" onclick="moveMed()">Mulai Belajar</button> 
+          <button class="btn btn-warning btnmasalah" id="btnHard" style="display: none;" onclick="moveHard()">Mulai Belajar</button> 
+          <div class="alert myAlert alert-warning alert-dismissible fade show mt-3 d-none" role="alert">
+            <strong>Selamat!</strong> anda sudah menyelesaikan waktu belajar, dilahkan istirahat
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-secondary btn-sm dropdown-toggle mt-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            perhatikan hal ini saat menggunakan            </button>
+            <ul class="dropdown-menu">
+            <li>tunggu sekitar 60 detik agar proress bar muncul</li>
+              <li>refresh saat sudah selesai agar progress bar hilang</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <script>
+      const alert = document.querySelector(".myAlert");
+const myBar = document.querySelector(".myBar");
+
+function moveEasy() {
+  var elem = document.getElementById("myBar");
+  var width = 1;
+  var id = setInterval(frame, 30000);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+      alert.classList.toggle("d-none");
+    } else {
+      width++;
+      elem.style.width = width + "%";
+      document.getElementById("label").innerHTML = width * 1 + "%";
+    }
+  }
+}
+function moveMed() {
+  var elem = document.getElementById("myBar");
+  var width = 1;
+  var id = setInterval(frame, 50);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+      alert.classList.toggle("d-none");
+    } else {
+      width++;
+      elem.style.width = width + "%";
+      document.getElementById("label").innerHTML = width * 1 + "%";
+    }
+  }
+}
+function moveHard() {
+  var elem = document.getElementById("myBar");
+  var width = 1;
+  var id = setInterval(frame, 500);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+      alert.classList.toggle("d-none");
+    } else {
+      width++;
+      elem.style.width = width + "%";
+      document.getElementById("label").innerHTML = width * 1 + "%";
+    }
+  }
+}
+</script>
+  </section>
+    <!-- akhir pengatur -->
 
     <!-- Contact -->
     <svg class="wives mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffc107" fill-opacity="1" d="M0,64L48,96C96,128,192,192,288,213.3C384,235,480,213,576,186.7C672,160,768,128,864,101.3C960,75,1056,53,1152,53.3C1248,53,1344,75,1392,85.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
@@ -186,8 +222,6 @@
       </svg> by <a href="https://www.instagram.com/dewnggprdp/" class="text-black">Dewangga Pradipa</a></p>
     </footer>
     <!-- Akhir footer -->
-  </body>
-</html>
 
 
 
