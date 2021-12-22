@@ -108,24 +108,48 @@
         </div>
       </div>
       <div class="row web">
-        <div class="col-md-6">
-          <a href="https://www.quipper.com/id"><img src="web/logo (2).png"></a>
+        <div class="col"><h1 class="mb-3">Pengatur Jam Belajar</h1></div>
+        <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+          <label class="btn btn-outline-warning" for="btnradio1">Easy</label>
+        
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+          <label class="btn btn-outline-warning" for="btnradio2">Medium</label>
+        
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+          <label class="btn btn-outline-warning" for="btnradio3">Hard</label>
         </div>
-        <div class="col-md-6">
-          <a href="https://dictionary.cambridge.org"><img src="web/logo (3).png" ></a>
-        </div>
-        <div class="col-md-6">
-          <a href="https://materi78.wordpress.com/"><img src="web/logo (4).png" ></a>
-        </div>
-        <div class="col-md-6">
-          <a href="https://ambisnotes.com"><img src="web/logo (5).png" ></a>
-        </div>
+        <div id="myProgress">
+          <div id="myBar" class="progress-bar progress-bar-striped progress-bar-animated">
+            <div id="label"></div>
+          </div>
+        </div><br>
+        <button class="btn btn-warning" onclick="move()">Mulai Belajar</button> 
+        <p class="mt-3 text-center">*Tunggu 30 detik hingga progress bar muncul</p>
       </div>
+
+      
     </section >
+    <script>
+      function move() {
+        var elem = document.getElementById("myBar");   
+        var width = 1;
+        var id = setInterval(frame, 30000);
+        function frame() {
+          if (width >= 100) {
+            clearInterval(id);
+          } else {
+            width++; 
+            elem.style.width = width + '%'; 
+            document.getElementById("label").innerHTML = width * 1  + '%';
+          }
+        }
+      }
+      </script>
     <!-- Akhir Konten -->
 
     <!-- Contact -->
-    <svg class="wives" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffc107" fill-opacity="1" d="M0,64L48,96C96,128,192,192,288,213.3C384,235,480,213,576,186.7C672,160,768,128,864,101.3C960,75,1056,53,1152,53.3C1248,53,1344,75,1392,85.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    <svg class="wives mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffc107" fill-opacity="1" d="M0,64L48,96C96,128,192,192,288,213.3C384,235,480,213,576,186.7C672,160,768,128,864,101.3C960,75,1056,53,1152,53.3C1248,53,1344,75,1392,85.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     <section class="contact bg-warning" id="contact">
       <div class="row text-center">
         <div class="col">
@@ -164,3 +188,20 @@
     <!-- Akhir footer -->
   </body>
 </html>
+
+
+
+
+
+        <!-- <div class="col-md-6">
+          <a href="https://www.quipper.com/id"><img src="web/logo (2).png"></a>
+        </div>
+        <div class="col-md-6">
+          <a href="https://dictionary.cambridge.org"><img src="web/logo (3).png" ></a>
+        </div>
+        <div class="col-md-6">
+          <a href="https://materi78.wordpress.com/"><img src="web/logo (4).png" ></a>
+        </div>
+        <div class="col-md-6">
+          <a href="https://ambisnotes.com"><img src="web/logo (5).png" ></a>
+        </div> -->
