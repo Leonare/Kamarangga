@@ -1,0 +1,59 @@
+.konten {
+  padding-top: 3rem;
+  min-height: 400px;
+}
+
+.item_input {
+  background-color: white;
+  width: 37%;
+  margin: 0.3rem;
+  height: 28px;
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+
+.edit {
+  background-color: #ffc107;
+  border-radius: 5px 0px 0px 5px;
+  border: 1px solid #6c757d;
+  display: inline-block;
+  cursor: pointer;
+  color: #6c757d;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 2px 12px;
+  text-decoration: none;
+}
+.edit:hover {
+  background-color: #6c757d;
+  color: white;
+}
+.edit:active {
+  position: relative;
+  top: 1px;
+}
+
+.remove {
+  background-color: #ffc107;
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid #6c757d;
+  display: inline-block;
+  cursor: pointer;
+  color: #6c757d;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 2px 12px;
+  text-decoration: none;
+}
+
+.remove:hover {
+  background-color: #6c757d;
+  color: white;
+}
+.remove:active {
+  position: relative;
+  top: 1px;
+}
