@@ -3,42 +3,23 @@ nav .container .collaps button {
   border-style: border box;
 }
 
-.container .row .col-sm-8 a img {
-  width: 250px;
-  height: 250px;
-}
-
 .konten {
-  position: relative;
-  margin-bottom: 100px;
-  min-height: 400px;
-}
-
-.konten .fitur button {
-  width: 70%;
-  margin: 1rem;
-  margin-top: 2rem;
-}
-
-.konten .web a img {
   width: 100%;
-  margin-bottom: 1rem;
-  border-radius: 10px;
 }
 
-.wives {
-  margin-top: 100px;
+.konten .container .row button {
+  width: 80%;
 }
 
 #myProgress {
-  position: relative;
   background-color: #ddd;
   margin-bottom: 2rem;
   padding: 0;
 }
 
-.konten .side {
-  width: 100%;
+.side {
+  margin-top: 100px;
+  margin-bottom: 10%;
 }
 
 .side .masalah .btnmasalah {
