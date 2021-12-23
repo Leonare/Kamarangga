@@ -4,103 +4,139 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet" />
+                <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+                <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+              </head>
 
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="todolist.css" />
-    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
-    <title>ToDoList</title>
+    <title>To Do List</title>
   </head>
   <body>
-    <section id="todo">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-8">
-            <div class="inputDiv">
-              <input type="text" class="input mt-4 mb-4 border rounded-3" placeholder="Apa yang ingin kamu lakukan...?" />
-              <button class="add btn btn-outline-dark"><i class="fas fa-plus"></i></button>
+
+        <!-- Header -->
+        <nav class="navbar navbar-expand-lg shadow-sm fixed-top navbar-light bg-light p-2">
+          <div class="container">
+            <a class="navbar-brand" href="#">Kamarangga</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li>
+                <button class="btn btn-warning " onclick="notifikasi()">Quotes of the day</button>
+                </li>
+              </ul>
             </div>
-            <div class="container"></div>
+          </div>
+        </nav>
+        <!-- Akhir Header -->
+
+    <section class="konten bg-warning">
+      <div class="container konten">
+        <div class="row justify-content-center text-center">
+          <div class="col-12">
+            <h1><span class="title">TO DO LIST</h1>
+          </div>
+          <div class="col-6 ">
+            <div class="input-group mb-3 inputDiv">
+              <input type="text" class="form-control input" placeholder="Mau Ngapain Nih?" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button class="add btn btn-outline-secondary" type="button" id="button-addon2">Add</button>
+            </div>
+          </div>
+          <div class="col-12 itemshit">
+            <div class="listitem"></div>
           </div>
         </div>
       </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L40,149.3C80,139,160,117,240,133.3C320,149,400,203,480,192C560,181,640,107,720,96C800,85,880,139,960,144C1040,149,1120,107,1200,101.3C1280,96,1360,128,1400,144L1440,160L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
     </section>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script>
-      /* 
+    
+    <!-- footer -->
+    <footer>
+      <p class="text-center">Created with <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="bg-danger" class="bi bi-heart-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+      </svg> by <a href="https://www.instagram.com/dewnggprdp/" class="text-black">Dewangga Pradipa</a></p>
+    </footer>
+
+  </body>
+  <script>
+    /* 
    this code will save the todo items even you refresh the page
 */
-      const container = document.querySelector(".container");
-      var inputValue = document.querySelector(".input");
-      const add = document.querySelector(".add");
-      if (window.localStorage.getItem("todos") == undefined) {
-        var todos = [];
+    const container = document.querySelector(".listitem");
+    var inputValue = document.querySelector(".input");
+    const add = document.querySelector(".add");
+    if (window.localStorage.getItem("todos") == undefined) {
+      var todos = [];
+      window.localStorage.setItem("todos", JSON.stringify(todos));
+    }
+    var todosEX = window.localStorage.getItem("todos");
+    var todos = JSON.parse(todosEX);
+    class item {
+      constructor(name) {
+        this.createItem(name);
+      }
+      createItem(name) {
+        var itemBox = document.createElement("div");
+        itemBox.classList.add("item");
+        var input = document.createElement("input");
+        input.type = "text";
+        input.disabled = true;
+        input.value = name;
+        input.classList.add("item_input");
+        var edit = document.createElement("button");
+        edit.classList.add("edit");
+        edit.innerHTML = "EDIT";
+        edit.addEventListener("click", () => this.edit(input, name));
+        var remove = document.createElement("button");
+        remove.classList.add("remove");
+        remove.innerHTML = "REMOVE";
+        remove.addEventListener("click", () => this.remove(itemBox, name));
+        container.appendChild(itemBox);
+        itemBox.appendChild(input);
+        itemBox.appendChild(edit);
+        itemBox.appendChild(remove);
+      }
+      edit(input, name) {
+        if (input.disabled == true) {
+          input.disabled = !input.disabled;
+        } else {
+          input.disabled = !input.disabled;
+          let indexof = todos.indexOf(name);
+          todos[indexof] = input.value;
+          window.localStorage.setItem("todos", JSON.stringify(todos));
+        }
+      }
+      remove(itemBox, name) {
+        itemBox.parentNode.removeChild(itemBox);
+        let index = todos.indexOf(name);
+        todos.splice(index, 1);
         window.localStorage.setItem("todos", JSON.stringify(todos));
       }
-      var todosEX = window.localStorage.getItem("todos");
-      var todos = JSON.parse(todosEX);
-      class item {
-        constructor(name) {
-          this.createItem(name);
-        }
-        createItem(name) {
-          var itemBox = document.createElement("div");
-          itemBox.classList.add("item");
-          var input = document.createElement("input");
-          input.type = "text";
-          input.disabled = true;
-          input.value = name;
-          input.classList.add("item_input");
-          var edit = document.createElement("button");
-          edit.classList.add("edit");
-          edit.innerHTML = "EDIT";
-          edit.addEventListener("click", () => this.edit(input, name));
-          var remove = document.createElement("button");
-          remove.classList.add("remove");
-          remove.innerHTML = "REMOVE";
-          remove.addEventListener("click", () => this.remove(itemBox, name));
-          container.appendChild(itemBox);
-          itemBox.appendChild(input);
-          itemBox.appendChild(edit);
-          itemBox.appendChild(remove);
-        }
-        edit(input, name) {
-          if (input.disabled == true) {
-            input.disabled = !input.disabled;
-          } else {
-            input.disabled = !input.disabled;
-            let indexof = todos.indexOf(name);
-            todos[indexof] = input.value;
-            window.localStorage.setItem("todos", JSON.stringify(todos));
-          }
-        }
-        remove(itemBox, name) {
-          itemBox.parentNode.removeChild(itemBox);
-          let index = todos.indexOf(name);
-          todos.splice(index, 1);
-          window.localStorage.setItem("todos", JSON.stringify(todos));
-        }
+    }
+    add.addEventListener("click", check);
+    window.addEventListener("keydown", (e) => {
+      if (e.which == 13) {
+        check();
       }
-      add.addEventListener("click", check);
-      window.addEventListener("keydown", (e) => {
-        if (e.which == 13) {
-          check();
-        }
-      });
-      function check() {
-        if (inputValue.value != "") {
-          new item(inputValue.value);
-          todos.push(inputValue.value);
-          window.localStorage.setItem("todos", JSON.stringify(todos));
-          inputValue.value = "";
-        }
+    });
+    function check() {
+      if (inputValue.value != "") {
+        new item(inputValue.value);
+        todos.push(inputValue.value);
+        window.localStorage.setItem("todos", JSON.stringify(todos));
+        inputValue.value = "";
       }
-      for (var v = 0; v < todos.length; v++) {
-        new item(todos[v]);
-      }
-    </script>
-  </body>
+    }
+    for (var v = 0; v < todos.length; v++) {
+      new item(todos[v]);
+    }
+  </script>
 </html>
