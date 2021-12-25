@@ -23,6 +23,14 @@ nav .container .collaps button {
   margin-bottom: 10%;
 }
 
-.side .masalah .btnmasalah {
+.studytime .masalah .btnmasalah {
   width: 100%;
+}
+
+.menu button {
+  width: 80%;
+}
+
+.menu {
+  padding-top: 5rem;
 }
